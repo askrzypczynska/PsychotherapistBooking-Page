@@ -1,0 +1,40 @@
+.Entrysection{
+    display: flex;
+    background-color: rgb(228, 228, 177);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contentBox{
+    width: 40%;
+    background-color: azure;
+    padding-left: 1em;
+}
+
+.contentBox h1{
+    font-size: 2.3rem;
+    margin-bottom: 50px;
+}
+
+.contentBox p {
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+
+.btnBox{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;   
+}
+
+.btn{
+    border: 2px solid transparent;
+    border-radius: 2em;
+    background-color: #f9ebd3;
+    padding: 15px;
+    
+}
+
+.btn:first-child{
+    margin-right: 10%;
+}
