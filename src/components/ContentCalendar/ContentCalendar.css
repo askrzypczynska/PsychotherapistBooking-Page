@@ -1,0 +1,23 @@
+.ContentCalendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.CalendarcontentBox{
+    width: 60vw;
+
+}
+
+.CalendarcontentBox h1{
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+
+}
+
+.CalendarcontentBox h5{
+    font-size: 1.2rem;
+    font-style: italic;
+}

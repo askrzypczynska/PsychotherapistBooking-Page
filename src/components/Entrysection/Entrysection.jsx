@@ -1,21 +1,23 @@
 import React from "react";
-import "./Entrysection.css"
-// import imgvector2 from 'img/imgvector2'
+import "./Entrysection.css";
+import "../../img/imgvector2.png"
 
 const Entrysection = () => {
 
     return (
       <div className="Entrysection">
         <div className="contentBox">
-            <h1>Lorem ipsum dolor sit</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis eros in mi lobortis, nec condimentum purus blandit. Sed in tortor risus. Nulla porttitor quis lorem ut pretium. Sed maximus ipsum massa, ut porta mauris luctus vel. Donec sit amet nisi erat. Curabitur efficitur nisl in odio sagittis, id elementum quam fermentum. Nunc convallis ante in ligula mattis lobortis. Etiam vel egestas ipsum. Aenean vel est nec sapien mollis luctus.</p>
+            <h1>Potrzebujesz pomocy, wsparcia?</h1>
+            <p> Jestem psychologiem i oferuję pomoc osobom, które doświadczają trudności emocjonalnych i potrzebują wsparcia w rozwiązywaniu swoich problemów. Na mojej stronie znajdziesz informacje o terapii indywidualnej i grupowej oraz o tym, jakie korzyści przynosi każda z tych form pomocy.</p>
             <div className="btnBox">
                 <div className="btn">Sesje Indywidualne</div>
                 <div className="btn">Sesje Grupowe</div>
             </div>
+
+            
         </div>
         <div className="imgContainer">
-            {/* <img src={''} alt="home"/> */}
+          <img src={require("../../img/imgvector2.png")} alt="Drawing of a psychological office"/>
         </div>
       </div>
     )

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container } from './styles'
 import { FaBars } from 'react-icons/fa'
 import Sidebar from '../Sidebar/Sidebar'
-import "./Header.css"
+import '../../img/logo.png'
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <Container>
-      <span className='logo' />
-      Nazwa firmy
+      <img src={require('../../img/logo.png')}/>
+      <p>Psychoterapia Szczecin</p>
       <FaBars onClick={showSiderbar} />
       {sidebar && <Sidebar active={setSidebar}/>}
     </Container>
