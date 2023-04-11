@@ -1,10 +1,10 @@
 import React from "react";
 import "./Calendar.css";
 
-const HourComponent = () => {
+const HourComponent = (props) => {
 
   return (
-    <div className="busy">9:30</div>
+    <div className="busy">{props.visitHours}</div>
   )
 }
   

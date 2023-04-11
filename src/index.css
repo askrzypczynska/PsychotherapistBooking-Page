@@ -3,7 +3,6 @@
 
 * {
   box-sizing: border-box;
-  font-size: 1.3rem;
 }
 
 html {
@@ -12,9 +11,5 @@ html {
 
 body {
   margin: 0;
-  background-color: #fff6e8;
+  background-color: #fff6e894;
 }
-
-.app{
-  /* background-image: ; */
-} 

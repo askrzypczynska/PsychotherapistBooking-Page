@@ -1,6 +1,6 @@
 .Calendar{
     border: 1px solid #3f5c5c;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .Daycomponent{
@@ -8,25 +8,28 @@
     border-right: 1px solid #3f5c5c;
 }
 
+.Daycomponent:last-child{
+    border-right: none;
+}
+
 .Daycomponent div{
     padding: 20px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
     margin: 10px;
 }
 
 .Daycomponent div p{
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
 }
 
 .Daycomponent div:first-child{
     border: none;
     margin: 0;
-    padding: 30px;
-    padding-left: 70px;
-    padding-right: 70px;
-    border: 1px solid black;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     background-color: #3f5c5c;
     color: white;
 }
@@ -46,11 +49,27 @@
     color: white;
 }
 
-.calendarNav{
-    background-color: #3f5c5c;
-    width: 80px;
-    height: 80px;
-    color: white;
-    border-radius: 50%;
+.Nav {
+    display: inline-block;
+
 }
 
+.calendarNav{
+    background-color: #A1A7A2;
+    width: 80px;
+    height: 80px;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    margin: 20px;
+    display: inline-block;
+}
+
+.calendarNav p {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.calendarNav:hover{
+    background-color: #636d65;
+    color: white;
+}

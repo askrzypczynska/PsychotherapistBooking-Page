@@ -2,20 +2,22 @@ import React from "react";
 import "./Calendar.css";
 import HourComponent from "./HourComponent";
 
-const Daycomponent = () => {
+const Daycomponent = (props) => {
+
+  const visitHours = ['9:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30'];
 
   return (
-    <div className="Daycomponent">
-        <div>Poniedziałek 
-            <p>10.04.2023</p>
+    <div className="Daycomponent ">
+        <div>{props.calendarDay}
+            <p>{props.calendarDate}</p>
         </div>
-        <HourComponent/>
-        <HourComponent/>
-        <HourComponent/>
-        <HourComponent/>
-        <HourComponent/>
-        <HourComponent/>
-        <HourComponent/>
+        <HourComponent visitHours={visitHours[0]}/>
+        <HourComponent visitHours={visitHours[1]}/>
+        <HourComponent visitHours={visitHours[2]}/>
+        <HourComponent visitHours={visitHours[3]}/>
+        <HourComponent visitHours={visitHours[4]}/>
+        <HourComponent visitHours={visitHours[5]}/>
+        <HourComponent visitHours={visitHours[6]}/>
     </div>
   )
 }

@@ -1,0 +1,27 @@
+.WeekCalendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .WeekCalendar button {
+    margin-right: 10px;
+  }
+  
+  .WeekCalendar table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .WeekCalendar th {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .WeekCalendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+  }
