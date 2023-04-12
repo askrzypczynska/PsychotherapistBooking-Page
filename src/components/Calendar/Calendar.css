@@ -6,6 +6,8 @@
 .Daycomponent{
     display: inline-block;
     border-right: 1px solid #3f5c5c;
+    text-transform: uppercase;
+    width: 215px;
 }
 
 .Daycomponent:last-child{

@@ -2,7 +2,7 @@ import Header from './components/Header/Header'
 import Entrysection from './components/Entrysection/Entrysection';
 import ContentCalendar from './components/ContentCalendar/ContentCalendar';
 import Footer from './components/Footer/Footer';
-import WeekCalendar from './components/HelpCalendar/calendarv2';
+import Formsection from './components/FormSection/Formsection';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <Header />
       <Entrysection />
       <ContentCalendar />
+      <Formsection />
       <Footer/>
-      <WeekCalendar />
     </div>
   );
 }

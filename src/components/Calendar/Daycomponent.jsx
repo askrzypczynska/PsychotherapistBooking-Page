@@ -2,14 +2,14 @@ import React from "react";
 import "./Calendar.css";
 import HourComponent from "./HourComponent";
 
-const Daycomponent = (props) => {
+function Daycomponent({ date }) {
 
   const visitHours = ['9:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30'];
 
   return (
     <div className="Daycomponent ">
-        <div>{props.calendarDay}
-            <p>{props.calendarDate}</p>
+        <div>{date.toLocaleDateString('pl-PL', { weekday: 'long' })}
+            <p>{date.toLocaleDateString('pl-PL')}</p>
         </div>
         <HourComponent visitHours={visitHours[0]}/>
         <HourComponent visitHours={visitHours[1]}/>
@@ -22,4 +22,4 @@ const Daycomponent = (props) => {
   )
 }
   
-  export default Daycomponent;
+export default Daycomponent;
