@@ -8,13 +8,20 @@
     border-right: 1px solid #3f5c5c;
     text-transform: uppercase;
     width: 215px;
+    font-size: 20px;
 }
 
 .Daycomponent:last-child{
     border-right: none;
 }
 
-.Daycomponent div{
+.Daycomponent .hour{
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.HourComponent{
     padding: 20px;
     padding-left: 40px;
     padding-right: 40px;
@@ -26,7 +33,7 @@
     margin: 0;
 }
 
-.Daycomponent div:first-child{
+.Day{
     border: none;
     margin: 0;
     padding: 20px;
@@ -39,11 +46,13 @@
 .busy{
     text-decoration: line-through ;
     color: rgb(71, 71, 71);
+    margin: 10px;
 }
 
 .active{
     background-color: #A1A7A2;
     cursor: pointer;
+    margin: 10px;
 }
 
 .active:hover{

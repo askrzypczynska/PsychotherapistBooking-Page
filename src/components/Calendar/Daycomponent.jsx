@@ -8,7 +8,7 @@ function Daycomponent({ date }) {
 
   return (
     <div className="Daycomponent ">
-        <div>{date.toLocaleDateString('pl-PL', { weekday: 'long' })}
+        <div className="Day">{date.toLocaleDateString('pl-PL', { weekday: 'long' })}
             <p>{date.toLocaleDateString('pl-PL')}</p>
         </div>
         <HourComponent visitHours={visitHours[0]}/>

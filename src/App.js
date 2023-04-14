@@ -10,7 +10,6 @@ function App() {
       <Header />
       <Entrysection />
       <ContentCalendar />
-      <Formsection />
       <Footer/>
     </div>
   );

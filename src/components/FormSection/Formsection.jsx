@@ -2,25 +2,36 @@ import React, { useState } from "react";
 import { FaTimes } from 'react-icons/fa'
 import './Formsection.css'
 
-function Formsection() {
+function Formsection(props) {
 
   const validateForm = form => {
-    if(!form.email) {
-      return "E-mail jest wymagany"
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email));
-    {
-      console.log("Błedny mail")
-    }
-    if(!form.firstName) {
-      console.log("imie wymagane")
+    const errors = {};
 
-    } else if (form.firstName.length < 2){
-      console.log("za krotkie imie")
+    if(!form.email) {
+      errors.email = true;
+    } 
+    
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)) {
+      errors.email = true;    
     }
-    return null;
+
+    if(!form.firstName) {
+      errors.firstName = true;
+    }
+    if(!form.lastName) {
+      errors.lastName = true;
+    }
+    if(!/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i.test(form.phone)) {
+      errors.phone = true;
+    } else if(!form.phone.length !==9 ) {
+      errors.phone = true;
+    }
+
+    return errors;
   }
 
-  const [error, setError] = useState(null);
+  const [errors, setErrors] = useState({});
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -31,22 +42,35 @@ function Formsection() {
   });
 
   const updateField = e => {
+    const { name, value } = e.target;
     setForm({
       ...form,
-      [e.target.name]: e.target.value
-    })
-  }
+      [name]: value
+    });
+
+    if (value && errors[name]){
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: false
+      }))
+    }
+  };
+  
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const errorMsg = validateForm(form)
-    if(errorMsg) {
-      setError(errorMsg)
-      console.log('blad')
-      return
+    const formErrors = validateForm(form)
+
+    if(Object.keys(formErrors).length > 0) {
+      setErrors(formErrors)
+      console.log("Błędne dane");
+      console.log(formErrors)
+      return;
     }
     //wysłanie danych na serwer
-    console.log(form)
+    console.log("Wysłane dane", form)
   }
 
   return (
@@ -54,12 +78,12 @@ function Formsection() {
       <div className="Form">
         <div className="headForm">
           <h1>Umów Wizytę</h1>
-          <FaTimes className="FaTimes"/>
+          <FaTimes className="FaTimes" onClick={props.onClose}/>
         </div>
         <input 
           type="text" 
           placeholder="Imię" 
-          className="formInput"
+          className={errors.firstName ? "formInput error" : "formInput"}
           name="firstName"
           onChange={updateField}
           required 
@@ -67,7 +91,7 @@ function Formsection() {
         <input 
           type="text" 
           placeholder="Nazwisko" 
-          className="formInput"
+          className={errors.lastName ? "formInput error" : "formInput"}
           name="lastName"
           onChange={updateField}
           required 
@@ -75,15 +99,15 @@ function Formsection() {
         <input 
           type="text" 
           placeholder="Numer telefonu" 
-          className="formInput"
+          className={errors.phone ? "formInput error" : "formInput"}
           name="phone"
           onChange={updateField}
           required 
         />
         <input 
-          type="email" 
+          type="text" 
           placeholder="Adres e-mail" 
-          className="formInput"
+          className={errors.email ? "formInput error" : "formInput"}
           name="email"
           onChange={updateField}
           required 
@@ -119,8 +143,7 @@ function Formsection() {
 
     </div>
   )
+
 }
   
 export default Formsection
-
-{/* <FaTimes onClick={closeForm} /> */}
