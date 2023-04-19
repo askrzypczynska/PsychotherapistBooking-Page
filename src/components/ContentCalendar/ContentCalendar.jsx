@@ -3,7 +3,6 @@ import "./ContentCalendar.css";
 import Calendar from "../Calendar/Calendar";
 
 const ContentCalendar = () => {
-
   return (
     <div className="ContentCalendar">
       <div className="CalendarcontentBox">

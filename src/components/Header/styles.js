@@ -27,4 +27,8 @@ export const Container = styled.div`
     cursor: pointer;
     
   }
+  @media screen and (max-width: 800px){
+    > svg {
+      color: white;
+    }
 `;
