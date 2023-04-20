@@ -6,8 +6,6 @@ const HourComponent = ( props ) => {
 
   const [showForm, setShowForm] = useState(false);
 
-  console.log(props.booked);
-
   const handleCloseForm = () => {
     setShowForm(false);
   }

@@ -6,25 +6,23 @@ function Formsection(props) {
 
   const validateForm = form => {
     const errors = {};
-
-    if(!form.email) {
-      errors.email = true;
-    } 
+    const nameRegex = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ]+$/;
     
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)) {
+    if (!form.email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)) {
       errors.email = true;    
     }
 
-    if(!form.firstName) {
+    if(!form.firstName || !nameRegex.test(form.firstName)) {
       errors.firstName = true;
     }
-    if(!form.lastName) {
+    if(!form.lastName || !nameRegex.test(form.lastName)) {
       errors.lastName = true;
     }
-    if(!/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i.test(form.phone)) {
+    if(!/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i.test(form.phone) || form.phone.length !== 9) {
       errors.phone = true;
-    } else if(!form.phone.length !==9 ) {
-      errors.phone = true;
+    }
+    if(!form.accept){
+      errors.accept = true;
     }
 
     return errors;
@@ -39,16 +37,22 @@ function Formsection(props) {
     email:"",
     info: "",
     pair: "",
+    accept: false,
+    //Data i godzina podpiąć
+    hour: "",
+    data: "",
   });
 
   const updateField = e => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+
     setForm({
       ...form,
-      [name]: value
+      [name]: newValue
     });
 
-    if (value && errors[name]){
+    if (newValue && errors[name]){
       setErrors(prevErrors => ({
         ...prevErrors,
         [name]: false
@@ -65,12 +69,11 @@ function Formsection(props) {
 
     if(Object.keys(formErrors).length > 0) {
       setErrors(formErrors)
-      console.log("Błędne dane");
-      console.log(formErrors)
       return;
     }
     //wysłanie danych na serwer
     console.log("Wysłane dane", form)
+    props.onClose()
   }
 
   return (
@@ -118,9 +121,6 @@ function Formsection(props) {
           name="info"
           onChange={updateField}
         />
-        <span>W tym terminie nie możesz zarejestrować się na konsultację dla par.
-            Aby zarejestrować termin dla pary, znajdź inny termin w kalendarzu po którym kolejna godzina (termin) będzie wolna. Jeśli nie możesz znaleść żadnego wolnego terminu w najbliższych 10 dniach to prosze o kontakt mailowy lub telefoniczny.
-        </span>
         <div className="formCheckbox">
           <input 
             type="checkbox" 
@@ -135,7 +135,14 @@ function Formsection(props) {
             Jeśli nie anuluję/odwołam terminu sesji (dotyczy każdej sesji) sms-esem lub poprzez kliknięcie w link w mailu potwierdzającym rejestrację minimum 4 doby przed terminem sesji, zobowiązuję się do uiszczenia pełnej opłaty za sesję która się nie odbędzie bez względu na powód nieobecności na niej.
         </span>
         <div className="formCheckbox">
-          <input type="checkbox" className="statuteCheckbox" required></input>
+          <input 
+            type="checkbox" 
+            className={errors.accept ? "statuteCheckbox errorCheck" : "statuteCheckbox"}
+            name="accept"
+            checked={form.accept} 
+            onChange={updateField}
+          >
+          </input>
           <p>Akceptuje</p>
         </div>
         <button onClick={handleSubmit} className="formBtn">Zarejestruj</button>
