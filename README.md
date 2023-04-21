@@ -2,6 +2,8 @@
 A site used for making appointments, intended for psychologists and psychotherapists. The site has a weekly calendar for making appointments, showing the hours already taken. Choose a free slot, fill out the form, accept the terms and conditions and you're done!
 *The site also includes a burger menu for custom new subsites.
 
+My project can be found here: https://askrzypczynska.github.io/PsychotherapistBooking-Page/
+
 ### Technologies Used
 * React.js
 * HTML
