@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calendar.css";
 import HourComponent from "./HourComponent";
 
@@ -15,7 +15,7 @@ function Daycomponent({ date, booked }) {
               <p>{date.toLocaleDateString('pl-PL')}</p>
           </div>
           {visitHours.map((hour, i) => {
-              return(<HourComponent visitHours={hour} key={hour} booked={booked[i]}/>)
+              return(<HourComponent visitHours={hour} key={hour} booked={booked[i]} date={date} />)
             })
           }
 
@@ -28,7 +28,7 @@ function Daycomponent({ date, booked }) {
               <p>{date.toLocaleDateString('pl-PL')}</p>
           </div>
           {visitHoursSaturday.map((hour, i) => {
-              return(<HourComponent visitHours={hour} key={hour} booked={booked[i]}/>)
+              return(<HourComponent visitHours={hour} key={hour} booked={booked[i]} date={date} />)
             })
           }
 

@@ -39,8 +39,8 @@ function Formsection(props) {
     pair: "",
     accept: false,
     //Data i godzina podpiąć
-    hour: "",
-    data: "",
+    date: props.date.toLocaleDateString('pl-PL'),
+    hour: props.visitHours
   });
 
   const updateField = e => {
@@ -72,8 +72,13 @@ function Formsection(props) {
       return;
     }
     //wysłanie danych na serwer
+    props.updateButtonClass('busy');
     console.log("Wysłane dane", form)
     props.onClose()
+    
+    console.log(form.date)
+    console.log(form.hour)
+
   }
 
   return (
