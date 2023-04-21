@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/PsychotherapistBooking-Page/static/css/main.96e9cebd.css",
+    "main.js": "/PsychotherapistBooking-Page/static/js/main.a82e55bd.js",
+    "static/media/imgvector2.png": "/PsychotherapistBooking-Page/static/media/imgvector2.229bc3aff35cb035ccac.png",
+    "static/media/background.png": "/PsychotherapistBooking-Page/static/media/background.5428aedf28154cce344b.png",
+    "static/media/logo.png": "/PsychotherapistBooking-Page/static/media/logo.ba54591ca1568cdfbdeb.png",
+    "index.html": "/PsychotherapistBooking-Page/index.html",
+    "main.96e9cebd.css.map": "/PsychotherapistBooking-Page/static/css/main.96e9cebd.css.map",
+    "main.a82e55bd.js.map": "/PsychotherapistBooking-Page/static/js/main.a82e55bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96e9cebd.css",
+    "static/js/main.a82e55bd.js"
+  ]
+}
