@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "flow-bin": "^0.203.1"
+    "flow-bin": "^0.203.1",
+    "gh-pages": "^5.0.0"
   }
 }
